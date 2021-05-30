@@ -1,6 +1,7 @@
 import "./styles.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useState } from "react";
+import axios from "axios";
 
 export default function App() {
   const [name, setName] = useState("");
@@ -19,10 +20,18 @@ export default function App() {
     // const name = e.target.name.value;
     // const email = e.target.email.value;
 
-    // const data = {
-    //   name,
-    //   email
-    // };
+     const data = {
+       name,
+      email
+    }
+    const config = {
+      headers: {
+        'Content-Type' : 'application/json'
+      }
+    }
+
+    const sendData = axios.post('/register', data, config)
+      .then(res => console.log(res.data))
   };
   return (
     <div className="container mt-4">
