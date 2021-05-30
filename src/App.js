@@ -20,18 +20,18 @@ export default function App() {
     // const name = e.target.name.value;
     // const email = e.target.email.value;
 
-     const data = {
-       name,
-      email
-    }
-    const config = {
-      headers: {
-        'Content-Type' : 'application/json'
-      }
-    }
+    const data = {
+      name,
+     email
+   }
+   const config = {
+     headers: {
+       'Content-Type' : 'application/json'
+     }
+   }
 
-    const sendData = axios.post('/register', data, config)
-      .then(res => console.log(res.data))
+   const sendData = axios.post('/register', data, config)
+     .then(res => console.log(res.data))
   };
   return (
     <div className="container mt-4">
